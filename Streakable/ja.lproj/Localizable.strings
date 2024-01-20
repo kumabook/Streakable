@@ -1,0 +1,91 @@
+/* 
+  Localizable.strings
+  Reminder
+
+  Created by Hiroki Kumamoto on 2022/12/31.
+  
+*/
+
+"Reminder" = "リマインダー";
+"Activity" = "活動";
+
+"Cancel" = "キャンセル";
+"Save" = "保存";
+"Create" = "作成";
+"Update" = "更新";
+"Delete" = "削除";
+"New" = "新規作成";
+"Move" = "並べ替え";
+"All" = "すべて";
+"Done" = "完了";
+
+"Activity.Delete.ConfirmButton" = "この活動を削除する";
+"Activity.Delete.ConfirmTitle" = "確認";
+"Activity.Delete.ConfirmMessage" = "今までのこの活動の活動記録もすべて削除されます。この操作は取り消せません。本当にこの活動を削除しますか？";
+"Activity.EmptyMessage" = "続けたい活動を作成しましょう！";
+
+"Contribution.Create" = "新規に活動を記録する";
+"Contribution.RemindLater" = "%d分後にリマインドする";
+"Contribution.Skip" = "今回はスキップする";
+"Contribution.Search" = "メモを検索";
+"Contribution.Filter" = "絞り込み";
+"Contribution.NoFilter" = "絞り込みなし";
+"Contribution.EmptyMessage" = "活動記録がここに表示されます✏️\nまずは活動を新規に作成して活動記録を保存しましょう🔥";
+"Contribution.EmptyMessageWithActivity" = "活動記録がここに表示されます✏️\n⏰リマインダーをタップして活動記録を保存しましょう🔥";
+
+"Reminder.EmptyMessage" = "まずは活動を作成しましょう✏️";
+"Reminder.CompleteMessage" = "お疲れ様です🎉\n今日のタスクは完了しました🎊";
+"Reminder.EmptyTodayMessage" = "今日の活動予定はありません🙌\n休んで次の日に備えましょう🛌";
+"Reminder.Reset" = "リセット";
+"Reminder.Reset.ConfirmButton" = "リマインダーをリセットする";
+"Reminder.Reset.ConfirmTitle" = "確認";
+"Reminder.Reset.ConfirmMessage" = "リマインダーをクリアして、直近のものに作成し直します";
+
+"Recurrence.daily" = "毎日";
+"Recurrence.every_other_day" = "1日おき";
+"Recurrence.every_second_day" = "2日おき";
+"Recurrence.weekly" = "毎週";
+"Recurrence.monthly" = "毎月";
+
+"Weekdays" = "特定の曜日";
+"Weekday.monday" = "月曜日";
+"Weekday.tuesday" = "火曜日";
+"Weekday.wednesday" = "水曜日";
+"Weekday.thursday" = "木曜日";
+"Weekday.friday" = "金曜日";
+"Weekday.saturday" = "土曜日";
+"Weekday.sunday" = "日曜日";
+
+"WeekdayShort.monday" = "月";
+"WeekdayShort.tuesday" = "火";
+"WeekdayShort.wednesday" = "水";
+"WeekdayShort.thursday" = "木";
+"WeekdayShort.friday" = "金";
+"WeekdayShort.saturday" = "土";
+"WeekdayShort.sunday" = "日";
+
+"Days" = "特定の日付";
+
+"Title" = "タイトル";
+"Date" = "日時";
+"Recurrence" = "繰り返し";
+"RemindsAt" = "リマインダー";
+"SnoozeInterval" = "スヌーズ";
+
+"Note" = "メモ";
+"Score" = "スコア";
+"Contribution" = "活動記録";
+"ContributionList" = "振り返る";
+
+"None" = "なし";
+"Just" = "ちょうど";
+"%d minutes before" = "%d分前";
+"Every %d minutes" = "%d分おき";
+"No title" = "タイトルなし";
+"Complete" = "完了";
+"Close" = "閉じる";
+
+"Contributions" = "活動数";
+"Scores" = "スコア数";
+"CurrentStreak" = "現在の連続記録";
+"LongestStreak" = "最長の連続記録";

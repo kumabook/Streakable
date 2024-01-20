@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" attributeType="Date" defaultDateTimeInterval="694191600" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="YES"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="priority" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="recurrence" attributeType="String" defaultValueString=""/>
+        <attribute name="recurrenceDetail" optional="YES" attributeType="String"/>
+        <attribute name="remindsAt" attributeType="Date" defaultDateTimeInterval="694191600" usesScalarValueType="NO"/>
+        <attribute name="snoozeInterval" attributeType="Integer 64" defaultValueString="10" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString=""/>
+        <attribute name="updatedAt" attributeType="Date" defaultDateTimeInterval="694191600" usesScalarValueType="NO"/>
+        <relationship name="contributions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Contribution" inverseName="activity" inverseEntity="Contribution"/>
+        <fetchIndex name="byTitleIndex">
+            <fetchIndexElement property="priority" type="Binary" order="descending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Contribution" representedClassName="Contribution" syncable="YES" codeGenerationType="class">
+        <attribute name="activityId" optional="YES" attributeType="UUID" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="note" attributeType="String" defaultValueString=""/>
+        <attribute name="score" optional="YES" attributeType="Integer 64" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Activity" inverseName="contributions" inverseEntity="Activity"/>
+        <fetchIndex name="byActivityIdIndex">
+            <fetchIndexElement property="activityId" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byDateIndex">
+            <fetchIndexElement property="date" type="Binary" order="descending"/>
+        </fetchIndex>
+    </entity>
+</model>

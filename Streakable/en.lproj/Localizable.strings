@@ -1,0 +1,92 @@
+/* 
+  Localizable.strings
+  Reminder
+
+  Created by Hiroki Kumamoto on 2022/12/31.
+  
+*/
+
+"Reminder" = "Reminder";
+"Activity" = "Activity";
+
+"Cancel" = "Cancel";
+"Save" = "Save";
+"Create" = "Create";
+"Update" = "Update";
+"Delete" = "Delete";
+"New" = "New";
+"Move" = "Move";
+"All" = "All";
+"Done" = "Done";
+
+"Activity.Delete.ConfirmButton" = "Delete this activity";
+"Activity.Delete.ConfirmTitle" = "Confirmation";
+"Activity.Delete.ConfirmMessage" = "All previous contributions for this activity will also be deleted. This action cannot be undone. Are you sure you want to delete this activity?";
+"Activity.EmptyMessage" = "Let's create a streakable activity!";
+
+"Contribution.Create" = "Create a new contribution";
+"Contribution.RemindLater" = "Remind in %d mins";
+"Contribution.Skip" = "Skip this time";
+"Contribution.Search" = "Search";
+"Contribution.Search" = "Search notes";
+"Contribution.Filter" = "Filter";
+"Contribution.NoFilter" = "No filter";
+"Contribution.EmptyMessage" = "Activity contributions are displayed here✏️\nFirst, create a new activity and save the activity contribution🔥";
+"Contribution.EmptyMessageWithActivity" = "Activity contributions are displayed here✏️\n⏰Tap Reminders to save your activity contribution🔥";
+
+"Reminder.EmptyMessage" = "First, let's create an activity✏️";
+"Reminder.CompleteMessage" = "Good job🎉\nToday's task has been completed🎊";
+"Reminder.EmptyTodayMessage" = "There are no activities scheduled for today🙌\nRest and prepare for the next day🛌";
+"Reminder.Reset" = "Reset";
+"Reminder.Reset.ConfirmButton" = "Reset reminders";
+"Reminder.Reset.ConfirmTitle" = "Confirmation";
+"Reminder.Reset.ConfirmMessage" = "Clear reminders and re-create the most recent ones";
+
+"Recurrence.daily" = "Daily";
+"Recurrence.every_other_day" = "Every other day";
+"Recurrence.every_second_day" = "Every second day";
+"Recurrence.weekly" = "Weekly";
+"Recurrence.monthly" = "Monthly";
+
+"Weekdays" = "Specific day";
+"Weekday.monday" = "Monday";
+"Weekday.tuesday" = "Tuesday";
+"Weekday.wednesday" = "Wednesday";
+"Weekday.thursday" = "Thursday";
+"Weekday.friday" = "Friday";
+"Weekday.saturday" = "Saturday";
+"Weekday.sunday" = "Sunday";
+
+"Days" = "Specific day";
+
+"WeekdayShort.monday" = "Mon";
+"WeekdayShort.tuesday" = "Tue";
+"WeekdayShort.wednesday" = "Wed";
+"WeekdayShort.thursday" = "Thu";
+"WeekdayShort.friday" = "Fri";
+"WeekdayShort.saturday" = "Sat";
+"WeekdayShort.sunday" = "Sun";
+
+"Title" = "Title";
+"Date" = "Date";
+"Recurrence" = "Recurrence";
+"RemindsAt" = "Reminds at";
+"SnoozeInterval" = "Snooze";
+
+"Note" = "Note";
+"Score" = "Score";
+"Contribution" = "Contribution";
+"ContributionList" = "Lookback";
+
+"None" = "None";
+"Just" = "Just";
+"%d minutes before" = "%d minutes before";
+"Every %d minutes" = "Every %d minutes";
+"No title" = "No title";
+"Complete" = "Complete";
+"Close" = "Close";
+
+"Contributions" = "Contributions";
+"Scores" = "Scores";
+"CurrentStreak" = "Current streak";
+"LongestStreak" = "Longest streak";
