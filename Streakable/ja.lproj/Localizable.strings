@@ -42,8 +42,6 @@
 "Reminder.Reset.ConfirmMessage" = "リマインダーをクリアして、直近のものに作成し直します";
 
 "Recurrence.daily" = "毎日";
-"Recurrence.every_other_day" = "1日おき";
-"Recurrence.every_second_day" = "2日おき";
 "Recurrence.weekly" = "毎週";
 "Recurrence.monthly" = "毎月";
 

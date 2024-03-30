@@ -35,12 +35,12 @@ struct ReminderItemView: View {
     }
 
     var date: Date {
-        return reminder.activity.remindsAt ?? reminder.date
+        return reminder.date
     }
 
     var intervalTitle: String? {
         guard
-            let interval = reminder.activity.remindsAt?.interval(to: reminder.date),
+            let interval = reminder.activity.remindsAt?.interval(to: Date()),
             interval > 0,
             let str = interval.reminderIntervalString
         else { return nil }

@@ -11,8 +11,6 @@ import UserNotifications
 
 enum RecurrenceType: String {
     case daily
-    case everyOtherDay = "every_other_day"
-    case everySecondDay = "every_second_day"
     case weekly
     case monthly
 }
@@ -66,18 +64,6 @@ extension Activity {
                 return d
             }
             return d.tomorrow
-        case .everyOtherDay:
-            let newDate = d
-            if newDate > date {
-                return d
-            }
-            return d.daysLater(2)
-        case .everySecondDay:
-            let newDate = d
-            if newDate > date {
-                return d
-            }
-            return d.daysLater(3)
         case .weekly:
             for i in 1...6 {
                 let d2 = d.daysLater(i)
@@ -121,10 +107,6 @@ extension Activity {
         switch RecurrenceType(rawValue: recurrence ?? "daily") {
         case .daily:
             return d.yesterday
-        case .everyOtherDay:
-            return d.daysAgo(2)
-        case .everySecondDay:
-            return d.daysAgo(3)
         case .weekly:
             for i in 1...6 {
                 let d2 = d.daysAgo(i)
@@ -240,5 +222,48 @@ extension Activity {
             content: content,
             trigger: date.asNotificationTrigger
         )
+    }
+
+    var asReminderNotificationRequests: [UNNotificationRequest] {
+        return asNotificationTriggers.enumerated().map { (i, trigger) in
+            let content = UNMutableNotificationContent()
+            content.title = ""
+            content.subtitle = ""
+            content.body = title ?? "Streakable alert"
+            content.badge = 1
+            content.sound = .default
+            content.userInfo[Self.userInfoKey] = id?.uuidString
+            return UNNotificationRequest(
+                identifier: "\(identifier):\(i)",
+                content: content,
+                trigger: trigger
+            )
+        }
+    }
+
+    var asNotificationTriggers: [UNCalendarNotificationTrigger] {
+        var components: [DateComponents] = []
+        guard var timeDateComponents = remindsAt?.asTimeDateComponents else { return [] }
+        switch RecurrenceType(rawValue: recurrence ?? "daily") {
+        case .daily:
+            components.append(timeDateComponents)
+        case .weekly:
+            for w in Weekday.allCases {
+                if weekDays.contains(w) {
+                    timeDateComponents.weekday = w.weekday
+                    components.append(timeDateComponents)
+                }
+            }
+        case .monthly:
+            for d in Day.allCases {
+                if days.contains(d) {
+                    timeDateComponents.day = d.date
+                    components.append(timeDateComponents)
+                }
+            }
+        default:
+            break
+        }
+        return components.map { UNCalendarNotificationTrigger(dateMatching: $0, repeats: true) }
     }
 }

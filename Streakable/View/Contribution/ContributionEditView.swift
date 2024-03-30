@@ -93,19 +93,6 @@ struct ContributionEditView: View {
                                 .background(Color.accentColor.opacity(0.15))
                                 .cornerRadius(12, antialiased: true)
                         }
-
-                        Button(action: {
-                            Task {
-                                await skip(reminder)
-                                dismiss()
-                            }
-                        }) {
-                            Text("Contribution.Skip")
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                        }.foregroundColor(Color.accentColor)
-                            .background(Color(.tertiarySystemFill))
-                            .cornerRadius(12, antialiased: true)
                     }.font(.title3).padding()
                 case .update(let contribution):
                     VStack {
@@ -177,16 +164,6 @@ struct ContributionEditView: View {
             appDelegate.notification?.removePendingNotificationRequests(withIdentifiers: [reminder.id])
             let d = Date().minutesAfter(Int(activity.snoozeInterval))
             try await appDelegate.notification?.addNotification(at: d, activity: activity, context: viewContext)
-        } catch {
-            print("[UI][Error] \(error)")
-        }
-    }
-
-    func skip(_ reminder: Reminder) async {
-        do {
-            appDelegate.notification?.removePendingNotificationRequests(withIdentifiers: [reminder.id])
-            try activity.updateReminderIfNeeded(reminder.date, context: viewContext)
-            try await appDelegate.notification?.addNotification(activity: activity, context: viewContext)
         } catch {
             print("[UI][Error] \(error)")
         }

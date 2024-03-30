@@ -92,7 +92,6 @@ struct ReminderListView: View {
         do {
             for activity in activities {
                 if todayContributions.filter({ $0.activityId == activity.id }).isEmpty {
-                    try activity.resetReminder(date: Date().startOfDay, context: viewContext)
                 }
             }
             try await appDelegate.notification?.resetNotifications(activities: Array(activities), context: viewContext)
@@ -118,6 +117,7 @@ struct ReminderListView: View {
                 },
                 context: viewContext
             )
+
             items = await center.pendingNotificationRequests().compactMap {
                 guard
                     let t = $0.trigger as? UNCalendarNotificationTrigger,

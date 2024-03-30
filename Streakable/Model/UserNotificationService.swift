@@ -40,19 +40,17 @@ open class UserNotificationService: NSObject {
         center.removeAllDeliveredNotifications()
         center.removePendingNotificationRequests(withIdentifiers: activities.map { $0.identifier })
         for activity in activities {
-            if
-                let date = activity.snoozeDate(),
-                let req = activity.toReminderNotificationRequest(at: date)
-                
-            {
+            for req in activity.asReminderNotificationRequests {
                 try await center.add(req)
             }
         }
     }
 
     public func addNotification(activity: Activity, context: NSManagedObjectContext) async throws {
-        guard let date = activity.snoozeDate() else { return }
-        try await addNotification(at: date, activity: activity, context: context)
+        let center = UNUserNotificationCenter.current()
+        for req in activity.asReminderNotificationRequests {
+            try await center.add(req)
+        }
     }
 
     public func addNotification(at date: Date, activity: Activity, context: NSManagedObjectContext) async throws {
